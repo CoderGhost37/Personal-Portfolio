@@ -1,4 +1,5 @@
 import AnimatedText from '@/components/AnimatedText';
+import HireMe from '@/components/HireMe';
 import Layout from '@/components/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
