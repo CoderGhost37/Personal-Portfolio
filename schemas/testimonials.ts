@@ -9,11 +9,19 @@ export default defineType({
       name: "name",
       title: "Name",
       type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "desgn",
+      title: "Designation",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "company",
       title: "Company",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "imgurl",
@@ -27,6 +35,7 @@ export default defineType({
       name: "feedback",
       title: "Feedback",
       type: "text",
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });
