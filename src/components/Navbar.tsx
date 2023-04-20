@@ -31,10 +31,11 @@ const CustomLink = ({
 
 const Navbar = () => {
     return (
-        <header className="w-full px-32 py-8 font-medium flex justify-between items-center">
+        <header className="w-full px-24 py-8 font-medium flex justify-between items-center">
             <nav>
                 <CustomLink href="/" title="Home" classStyles="mr-4" />
                 <CustomLink href="/about" title="About" classStyles="mx-4" />
+                <CustomLink href="/experience" title="Experience" classStyles="mx-4" />
                 <CustomLink href="/projects" title="Projects" classStyles="mx-4" />
                 <CustomLink href="/contact" title="Contact" classStyles="ml-4" />
             </nav>

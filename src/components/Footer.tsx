@@ -11,6 +11,7 @@ const Footer = () => {
       <div className='flex justify-center items-center gap-8 mt-5 font-medium text-lg'>
         <Link href='/'>Home</Link>
         <Link href='/about'>About</Link>
+        <Link href='/experience'>Experience</Link>
         <Link href='/projects'>Projects</Link>
         <Link href='/contact'>Contact</Link>
       </div>
