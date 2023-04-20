@@ -11,8 +11,18 @@ export default defineType({
       type: "string",
     }),
     defineField({
-      name: "description",
-      title: "Description",
+      name: "para1",
+      title: "Paragraph-1",
+      type: "text",
+    }),
+    defineField({
+      name: "para2",
+      title: "Paragraph-2",
+      type: "text",
+    }),
+    defineField({
+      name: "para3",
+      title: "Paragraph-3",
       type: "text",
     }),
     defineField({
@@ -22,6 +32,21 @@ export default defineType({
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: "clients",
+      title: "Satisfied Clients",
+      type: "string",
+    }),
+    defineField({
+      name: "projects",
+      title: "Projects Completed",
+      type: "string",
+    }),
+    defineField({
+      name: "yoe",
+      title: "Years Of Experience",
+      type: "string",
     }),
   ],
 });

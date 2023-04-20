@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const quote = {
     initial: {
-        opacity: 0,
+        opacity: 1,
     },
     animate: {
         opacity: 1,
@@ -38,7 +38,7 @@ const AnimatedText = ({
     return (
         <div className='w-full mx-auto py-2 flex justify-center items-center overflow-hidden text-center'>
             <motion.h1
-                className={`${classStyles} inline-block w-full text-dark font-bold text-8xl`}
+                className={`inline-block w-full text-dark font-bold capitalize text-8xl ${classStyles}`}
                 variants={quote}
                 initial='initial'
                 animate='animate'
@@ -46,7 +46,7 @@ const AnimatedText = ({
                 {text.split(' ').map((word, index) => (
                     <motion.span
                         key={index}
-                        className='inline-block'
+                        className='inline-block py-1'
                         variants={singleWord}
                     >
                         {word}&nbsp;

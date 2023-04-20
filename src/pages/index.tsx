@@ -1,5 +1,4 @@
 import AnimatedText from '@/components/AnimatedText';
-import HireMe from '@/components/HireMe';
 import Layout from '@/components/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,8 +25,7 @@ const Home = () => {
             />
             <p className='my-4 text-base font-medium'>
               As a skilled full-stack developer, I am dedicated to turning ideas
-              into innovative web applications. Explore my latest projects and
-              articles, showcasing my expertise in React.js and web development.
+              into innovative web applications. Explore my latest projects, showcasing my expertise in React.js and web development.
             </p>
             <div className='mt-2'>
               <Link

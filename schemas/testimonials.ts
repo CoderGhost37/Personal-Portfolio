@@ -26,7 +26,7 @@ export default defineType({
     defineField({
       name: "feedback",
       title: "Feedback",
-      type: "string",
+      type: "text",
     }),
   ],
 });
