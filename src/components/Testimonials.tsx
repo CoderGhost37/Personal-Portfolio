@@ -30,14 +30,14 @@ const TestimonialCard = ({ index, feedback, desgn, name, company, imgurl }: { in
     return (
         <motion.div
             variants={fadeIn("", "spring", index * 0.5, 0.75)}
-            className='bg-[#1d1836] shadow-lg p-5 md:p-10 rounded-3xl xs:w-[320px] w-full'
+            className='bg-white shadow-lg p-5 md:p-10 rounded-3xl xs:w-[320px] w-full'
         >
-            <p className='text-light text-5xl'>"</p>
+            <p className='text-dark text-5xl'>"</p>
             <div className="mt-1">
-                <p className='text-light tracking-wider text-sm sm:text-base md:text-lg'>{feedback}</p>
+                <p className='text-dark tracking-wider text-sm sm:text-base md:text-lg'>{feedback}</p>
                 <div className="mt-7 flex justify-center items-center gap-1">
                     <div className="flex-1 flex flex-col">
-                        <p className='text-light font-medium text-sm md:text-base'>
+                        <p className='text-dark font-medium text-sm md:text-base'>
                             <span className='text-blue-700'>@</span> {name}
                         </p>
                         <p className='mt-1 text-gray-400 text-xs md:text-sm'>
@@ -54,8 +54,8 @@ const TestimonialCard = ({ index, feedback, desgn, name, company, imgurl }: { in
 const Testimonials = ({ testimonials }: { testimonials: any }) => {
     return (
         <Layout classStyles='pt-16 px-5 sm:px-10 md:px-20'>
-            <AnimatedText text='Testimonials' classStyles='!text-3xl md:!text-6xl mb-16' />
-            <div className='mt-4 md:mt-10 flex flex-wrap gap-7'>
+            <AnimatedText text='Testimonials' classStyles='!text-3xl md:!text-6xl mb-10' />
+            <div className='mt-5 flex flex-wrap gap-7'>
                 {testimonials.map((testimonial: any, index: number) => (
                     <TestimonialCard index={index} key={testimonial.name} {...testimonial} />
                 ))}
