@@ -26,8 +26,8 @@ const FeaturedProjectCard = ({
     tags,
 }: ProjectCardProps) => {
     return (
-        <div className='w-full relative flex items-center justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light shadow-2xl p-6 md:p-10'>
-            <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-br-3xl rounded-[2.5rem] bg-dark" />
+        <div className='w-full relative flex items-center justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light dark:bg-dark dark:border-light shadow-2xl p-6 md:p-10'>
+            <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-br-3xl rounded-[2.5rem] bg-dark dark:bg-light" />
             <Link
                 href={projectLink}
                 target='_blank'
@@ -39,6 +39,8 @@ const FeaturedProjectCard = ({
                     className='w-full h-auto hover:scale-105 transition duration-300'
                     width={600}
                     height={600}
+                    priority
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
                 />
             </Link>
             <div className='w-1/2 flex flex-col justify-between items-start pl-8'>
@@ -47,9 +49,9 @@ const FeaturedProjectCard = ({
                     target='_blank'
                     className='hover:underline underline-offset-2'
                 >
-                    <h2 className='my-2 w-full text-left font-bold text-3xl'>{title}</h2>
+                    <h2 className='my-2 dark:text-light w-full text-left font-bold text-3xl'>{title}</h2>
                 </Link>
-                <p className='my-2 font-medium text-dark text-lg'>{description}</p>
+                <p className='my-2 font-medium text-dark dark:text-light text-lg'>{description}</p>
                 <div className='flex flex-wrap items-center my-2 gap-2'>
                     {tags?.map((tag, index) => (
                         <span
@@ -68,14 +70,14 @@ const FeaturedProjectCard = ({
                         whileTap={{ scale: 0.9 }}
                         className="w-10"
                     >
-                        <GithubIcon classStyles='' />
+                        <GithubIcon classStyles='dark:text-light' />
                     </motion.a>
                     <motion.a
                         href={projectLink}
                         target="_blank"
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="ml-4 rounded bg-dark text-light py-2 px-6 font-semibold"
+                        className="ml-4 rounded bg-dark dark:text-dark text-light dark:bg-light py-2 px-6 font-semibold"
                     >
                         Visit Project
                     </motion.a>
@@ -94,8 +96,8 @@ const ProjectCard = ({
     tags,
 }: ProjectCardProps) => {
     return (
-        <div className='w-full flex flex-col items-center justify-center rounded-3xl border border-solid border-dark bg-light shadow-2xl p-6 relative'>
-            <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark" />
+        <div className='w-full flex flex-col items-center justify-center rounded-3xl border border-solid border-dark bg-light dark:bg-dark dark:border-light shadow-2xl p-6 relative'>
+            <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
             <Link
                 href={projectLink}
                 target='_blank'
@@ -115,9 +117,9 @@ const ProjectCard = ({
                     target='_blank'
                     className='hover:underline underline-offset-2'
                 >
-                    <h2 className='my-2 w-full text-left font-bold text-3xl'>{title}</h2>
+                    <h2 className='my-2 w-full text-left font-bold dark:text-light text-3xl'>{title}</h2>
                 </Link>
-                <p className='my-2 font-medium text-dark text-lg'>{description}</p>
+                <p className='my-2 font-medium text-dark dark:text-light text-lg'>{description}</p>
                 <div className='flex flex-wrap items-center my-2 gap-2'>
                     {tags?.map((tag, index) => (
                         <span
@@ -136,14 +138,14 @@ const ProjectCard = ({
                         whileTap={{ scale: 0.9 }}
                         className="w-10"
                     >
-                        <GithubIcon classStyles='' />
+                        <GithubIcon classStyles='dark:text-light' />
                     </motion.a>
                     <motion.a
                         href={projectLink}
                         target="_blank"
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        className="ml-4 rounded bg-dark text-light py-2 px-6 font-semibold"
+                        className="ml-4 rounded bg-dark dark:text-dark text-light dark:bg-light py-2 px-6 font-semibold"
                     >
                         Visit Project
                     </motion.a>

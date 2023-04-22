@@ -7,7 +7,7 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import Layout from '@/components/Layout';
 import AnimatedText from '@/components/AnimatedText';
-import { client, urlFor } from '../../lib/sanity.client';
+import { urlFor } from '../../lib/sanity.client';
 import Image from 'next/image';
 
 const ExperienceCard = ({ exp }: { exp: any }) => {
@@ -49,7 +49,7 @@ const Experience = ({ workExperience }: { workExperience: any }) => {
         <Layout classStyles='pt-16 px-20'>
             <AnimatedText text='Work Experience' classStyles='!text-6xl mb-16' />
             <div className='mt-10 flex flex-col'>
-                <VerticalTimeline lineColor='#1d1836'>
+                <VerticalTimeline lineColor='#3b316d'>
                     {workExperience.map((exp: any, index: number) => (
                         <ExperienceCard key={index} exp={exp} />
                     ))}

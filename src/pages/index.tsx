@@ -6,7 +6,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <main className='flex items-center text-dark w-full min-h-screen'>
+    <main className='flex items-center text-dark dark:text-light w-full min-h-screen'>
       <Layout classStyles='pt-0'>
         <div className='flex items-center justify-between w-full'>
           <div className='w-1/2'>
@@ -16,6 +16,8 @@ const Home = () => {
               className='w-full h-auto'
               width={800}
               height={800}
+              priority
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
             />
           </div>
           <div className='w-1/2 flex flex-col items-center self-center'>
@@ -32,7 +34,7 @@ const Home = () => {
                 href='/Kushagra_Mathur_Resume.pdf'
                 download={true}
                 target='_blank'
-                className='flex items-center bg-dark text-light rounded-md text-lg font-semibold py-2 px-4 hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark'
+                className='flex items-center bg-dark dark:bg-light text-light dark:text-dark rounded-md text-lg font-semibold py-2 px-4 hover:bg-light hover:dark:bg-dark hover:text-dark hover:dark:text-light border-2 border-solid border-transparent hover:border-dark hover:dark:border-light'
               >
                 Resume
               </Link>

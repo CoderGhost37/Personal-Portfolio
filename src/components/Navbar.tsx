@@ -2,8 +2,9 @@ import Link from "next/link";
 import React from "react";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
-import { GithubIcon, LinkedInIcon, TwitterIcon } from "./Icons";
+import { GithubIcon, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon } from "./Icons";
 import { motion } from "framer-motion";
+import useThemeSwitcher from "@/hooks/useThemeSwitcher";
 
 const CustomLink = ({
     href,
@@ -20,7 +21,7 @@ const CustomLink = ({
         <Link href={href} className={`${classStyles} relative group`}>
             {title}
             <span
-                className={`h-[2px] inline-block group-hover:w-full transition-[width] ease duration-300 bg-dark absolute left-0 -bottom-0.5 ${router.asPath === href ? "w-full" : "w-0"
+                className={`h-[2px] inline-block group-hover:w-full transition-[width] ease duration-300 bg-dark dark:bg-light absolute left-0 -bottom-0.5 ${router.asPath === href ? "w-full" : "w-0"
                     }`}
             >
                 &nbsp;
@@ -30,8 +31,14 @@ const CustomLink = ({
 };
 
 const Navbar = () => {
+    const { mode, setMode } = useThemeSwitcher()
+
+    const changeTheme = () => {
+        setMode(mode === 'light' ? 'dark' : 'light')
+    }
+
     return (
-        <header className="w-full px-24 py-8 font-medium flex justify-between items-center">
+        <header className="w-full px-24 py-8 font-medium flex justify-between items-center dark:text-light">
             <nav>
                 <CustomLink href="/" title="Home" classStyles="mr-4" />
                 <CustomLink href="/about" title="About" classStyles="mx-4" />
@@ -46,7 +53,7 @@ const Navbar = () => {
                     target="_blank"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-6 mr-3"
+                    className="w-6 mr-4"
                 >
                     <GithubIcon classStyles={""} />
                 </motion.a>
@@ -55,7 +62,7 @@ const Navbar = () => {
                     target="_blank"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-6 mx-3"
+                    className="w-6 mx-4"
                 >
                     <LinkedInIcon classStyles={""} />
                 </motion.a>
@@ -64,10 +71,17 @@ const Navbar = () => {
                     target="_blank"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-6 ml-3"
+                    className="w-6 mx-4"
                 >
                     <TwitterIcon classStyles={""} />
                 </motion.a>
+                <button onClick={changeTheme} className={`ml-4 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
+                    {mode === 'dark' ? (
+                        <SunIcon classStyles="fill-dark" />
+                    ) : (
+                        <MoonIcon classStyles="fill-dark" />
+                    )}
+                </button>
             </nav>
 
             <div className="absolute left-[50%] top-2 translate-x-[-50%]">

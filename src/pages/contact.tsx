@@ -100,13 +100,13 @@ const contact = () => {
                                         name="message"
                                     />
                                 </div>
-                                <button type="submit" className="mt-5 rounded-md py-2 px-4 bg-dark text-light text-lg font-semibold">
+                                <button type="submit" className="mt-5 rounded-md py-2 px-4 bg-dark dark:text-dark text-light dark:bg-light text-lg font-semibold">
                                     {loading ? "Sending..." : "Send Message"}
                                 </button>
                             </form>
                         ) : (
                             <div className='mt-20 md:mt-0 flex justify-center items-center h-full'>
-                                <h3 className="font-semibold ml-6 text-dark text-center text-2xl">Thank you for getting in touch</h3>
+                                <h3 className="font-semibold ml-6 text-dark dark:text-light text-center text-2xl">Thank you for getting in touch</h3>
                             </div>
                         )}
                     </div>
