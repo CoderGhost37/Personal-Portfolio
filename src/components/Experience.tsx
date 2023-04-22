@@ -29,12 +29,12 @@ const ExperienceCard = ({ exp }: { exp: any }) => {
             }
         >
             <div className=''>
-                <h3 className='text-light text-2xl font-bold'>{exp.role}</h3>
+                <h3 className='text-light text-2xl md:text-xl sm:text-lg font-bold'>{exp.role}</h3>
                 <p className='text-gray-400 text-base font-medium' style={{ margin: 0, fontSize: '16px' }}>{exp.company}</p>
             </div>
             <ul className='mt-5 list-disc ml-5 space-y-2'>
                 {exp.points?.map((point: string, index: number) => (
-                    <li key={`exp-point-${index}`} className='text-sm text-light pl-1 tracking-wider'>
+                    <li key={`exp-point-${index}`} className='text-sm md:text-xs text-light pl-1 tracking-wider'>
                         {point}
                     </li>
                 ))}
@@ -46,9 +46,9 @@ const ExperienceCard = ({ exp }: { exp: any }) => {
 
 const Experience = ({ workExperience }: { workExperience: any }) => {
     return (
-        <Layout classStyles='pt-16 px-20'>
-            <AnimatedText text='Work Experience' classStyles='!text-6xl mb-16' />
-            <div className='mt-10 flex flex-col'>
+        <Layout classStyles='!pt-16 px-20'>
+            <AnimatedText text='Work Experience' classStyles='xl:!text-7xl lg:!text-6xl md:!text-5xl' />
+            <div className='mt-16 md:mt-10 flex flex-col'>
                 <VerticalTimeline lineColor='#3b316d'>
                     {workExperience.map((exp: any, index: number) => (
                         <ExperienceCard key={index} exp={exp} />

@@ -43,10 +43,10 @@ const contact = () => {
                 <Layout classStyles='pt-16'>
                     <AnimatedText
                         text='Get in Touch'
-                        classStyles='mb-20'
+                        classStyles='xl:!text-7xl lg:!text-6xl sm:!text4xl xs:!text-2xl mb-20'
                     />
-                    <div className="flex flex-col md:flex-row justify-center items-center md:items-start w-full">
-                        <div className="w-full md:w-1/3 flex flex-col">
+                    <div className="flex flex-row md:flex-col justify-center items-start md:items-center w-full">
+                        <div className="w-1/3 md:w-full flex flex-col">
                             <div className="flex flex-col justify-start items-center p-4 rounded-lg bg-white hover:bg-gray-100 text-dark shadow-2xl">
                                 <MdOutlineEmail className='w-8 h-8' />
                                 <h4 className='font-bold mt-2'>Email</h4>
@@ -66,7 +66,7 @@ const contact = () => {
                         </div>
 
                         {!isFormSubmitted ? (
-                            <form className="w-full md:w-2/3 mt-20 md:mt-0 ml-6 sm:px-10 flex flex-col justify-center items-center" ref={form} onSubmit={submitForm}>
+                            <form className="w-2/3 md:w-full md:py-20 ml-6 px-10 md:px-0 flex flex-col justify-center items-center" ref={form} onSubmit={submitForm}>
                                 <div className="w-full mb-2">
                                     <input
                                         type="text"
@@ -91,7 +91,7 @@ const contact = () => {
                                 </div>
                                 <div className='w-full mt-2'>
                                     <textarea
-                                        rows={5}
+                                        rows={7}
                                         className="w-full py-3 px-5 shadow-2xl focus:ring-1 focus:ring-dark rounded md:text-lg"
                                         placeholder="Your Message"
                                         required
@@ -105,7 +105,7 @@ const contact = () => {
                                 </button>
                             </form>
                         ) : (
-                            <div className='mt-20 md:mt-0 flex justify-center items-center h-full'>
+                            <div className='md:mt-20 flex justify-center items-center h-full'>
                                 <h3 className="font-semibold ml-6 text-dark dark:text-light text-center text-2xl">Thank you for getting in touch</h3>
                             </div>
                         )}

@@ -42,36 +42,36 @@ const about = ({ about, skills }: { about: any, skills: any }) => {
 
             <main className='flex w-full flex-col items-center justify-center dark:text-light'>
                 <Layout classStyles='pt-16 px-20'>
-                    <AnimatedText text='Passion Fuels Purpose' classStyles='!text-6xl mb-16' />
-                    <div className="grid w-full grid-cols-8 gap-16">
-                        <div className="col-span-3 flex flex-col items-start justify-start">
+                    <AnimatedText text='Passion Fuels Purpose' classStyles='lg:!text-6xl sm:!text-5xl xs:!text-4xl sm:mb-8 mb-16' />
+                    <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
+                        <div className="col-span-3 xl:col-span-4 md:col-span-8 md:mt-5 flex flex-col items-start justify-start md:order-2">
                             <h2 className='mb-4 text-lg font-bold uppercase dark:text-light/75 text-dark/75'>About Me</h2>
                             <p className='font-medium'>{about.para1}</p>
                             <p className='font-medium my-4'>{about.para2}</p>
                             <p className='font-medium'>{about.para3}</p>
                         </div>
-                        <div className="col-span-3 relative h-max rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-8">
+                        <div className="col-span-3 xl:col-span-4 md:col-span-8 relative h-max rounded-2xl border border-solid border-dark dark:border-light bg-light dark:bg-dark p-8 md:order-1">
                             <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
                             <Image src={urlFor(about.img).url()} alt='Kushagra' className='w-full h-auto rounded-2xl' width={800} height={800} priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' />
                         </div>
-                        <div className="col-span-2 flex flex-col items-end justify-between">
-                            <div className="flex flex-col items-end justify-center">
-                                <span className='text-6xl inline-block font-bold'>
+                        <div className="col-span-2 xl:col-span-8 xl:flex-row xl:items-center xl:mt-5 flex flex-col items-end justify-between md:order-3">
+                            <div className="flex flex-col xl:items-center items-end justify-center">
+                                <span className='text-7xl md:text-6xl sm:text-5xl xs:text-4xl inline-block font-bold'>
                                     <AnimatedNumbers value={about.clients} />+
                                 </span>
-                                <h2 className='text-xl font-medium capitalize dark:text-light/75 text-dark/75'>satisfied clients</h2>
+                                <h2 className='text-xl xl:text-center md:text-lg sm:text-base xs:text-sm font-medium capitalize dark:text-light/75 text-dark/75'>satisfied clients</h2>
                             </div>
-                            <div className="flex flex-col items-end justify-center">
-                                <span className='text-6xl inline-block font-bold'>
+                            <div className="flex flex-col xl:items-center items-end justify-center">
+                                <span className='text-7xl md:text-6xl sm:text-5xl xs:text-4xl inline-block font-bold'>
                                     <AnimatedNumbers value={about.projects} />+
                                 </span>
-                                <h2 className='text-xl font-medium capitalize dark:text-light/75 text-dark/75'>projects completed</h2>
+                                <h2 className='text-xl xl:text-center md:text-lg sm:text-base xs:text-sm font-medium capitalize dark:text-light/75 text-dark/75'>projects completed</h2>
                             </div>
-                            <div className="flex flex-col items-end justify-center">
-                                <span className='text-6xl inline-block font-bold'>
+                            <div className="flex flex-col xl:items-center items-end justify-center">
+                                <span className='text-7xl md:text-6xl sm:text-5xl xs:text-4xl inline-block font-bold'>
                                     <AnimatedNumbers value={about.yoe} />+
                                 </span>
-                                <h2 className='text-xl font-medium capitalize dark:text-light/75 text-dark/75'>years of experience</h2>
+                                <h2 className='text-xl xl:text-center md:text-lg sm:text-base xs:text-sm font-medium capitalize dark:text-light/75 text-dark/75'>years of experience</h2>
                             </div>
                         </div>
                     </div>

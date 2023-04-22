@@ -8,7 +8,7 @@ const Footer = () => {
       <Link href='/' className='p-1'>
         <Image src='/images/logo.png' alt='Kushagra' className='dark:invert' width={300} height={300} />
       </Link>
-      <div className='flex justify-center items-center gap-8 mt-5 font-medium text-lg'>
+      <div className='flex sm:flex-col justify-center items-center sm:mt-10 sm:gap-2 gap-8 mt-5 font-medium text-lg lg:text-base'>
         <Link href='/'>Home</Link>
         <Link href='/about'>About</Link>
         <Link href='/experience'>Experience</Link>
