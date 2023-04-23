@@ -25,9 +25,17 @@ const contact = () => {
             },
             body: JSON.stringify({ name, email, message })
         })
-        setLoading(false)
-        setIsFormSubmitted(true)
-        form.current.reset()
+            .then((res) => res.json())
+            .then((data) => {
+                setLoading(false)
+                if (data.message === 'success') {
+                    setIsFormSubmitted(true)
+                    form.current.reset()
+                } else {
+                    setIsFormSubmitted(false)
+                    alert('Something went wrong. Please try again later.')
+                }
+            })
     }
 
     return (
