@@ -166,7 +166,7 @@ const projects = ({ projects }: { projects: any }) => {
                     content='Projects page of my portfolio website'
                 />
             </Head>
-            <TransitionEffect />
+            {/* <TransitionEffect /> */}
             <main className='w-full max-w-7xl mx-auto mb-16 flex flex-col items-center justify-center'>
                 <Layout classStyles='pt-16'>
                     <AnimatedText

@@ -47,7 +47,7 @@ const contact = () => {
                     content='Contact page of my portfolio website'
                 />
             </Head>
-            <TransitionEffect />
+            {/* <TransitionEffect /> */}
             <main className='w-full max-w-7xl mx-auto flex flex-col items-center justify-center'>
                 <Layout classStyles='pt-16'>
                     <AnimatedText
@@ -56,15 +56,15 @@ const contact = () => {
                     />
                     <div className="flex flex-row md:flex-col justify-center items-start md:items-center w-full">
                         <div className="w-1/3 md:w-full flex flex-col">
-                            <div className="flex flex-col justify-start items-center p-4 rounded-lg bg-white hover:bg-gray-100 text-dark shadow-2xl">
+                            <div className="flex flex-col justify-start items-center p-4 rounded-lg bg-white dark:bg-zinc-800 dark:text-light hover:bg-gray-100 text-dark shadow-2xl">
                                 <MdOutlineEmail className='w-8 h-8' />
                                 <h4 className='font-bold mt-2'>Email</h4>
                                 <h5 className='font-semibold text-sm mb-2'>kushagram2002@gmail.com</h5>
-                                <Link href='mailto:kushmathur2020@gmail.com' target='_blank'>
+                                <Link href='mailto:kushagram2002@gmail.com' target='_blank'>
                                     <p className='text-sm hover:text-blue-500'>Send a Message</p>
                                 </Link>
                             </div>
-                            <div className="mt-5 flex flex-col justify-start items-center p-4 rounded-lg bg-white hover:bg-gray-100 text-dark shadow-2xl">
+                            <div className="mt-5 flex flex-col justify-start items-center p-4 rounded-lg bg-white dark:bg-zinc-800 dark:text-light hover:bg-gray-100 text-dark shadow-2xl">
                                 <BsWhatsapp className='w-8 h-8' />
                                 <h4 className='font-bold mt-2'>WhatsApp</h4>
                                 <h5 className='font-semibold text-sm mb-2'>+91 8860263558</h5>
@@ -83,7 +83,7 @@ const contact = () => {
                                         required
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        className="w-full py-3 px-5 shadow-2xl focus:ring-1 focus:ring-dark rounded md:text-lg"
+                                        className="w-full py-3 px-5 shadow-2xl focus:ring-1 focus:ring-dark rounded md:text-lg dark:bg-zinc-800 dark:text-light"
                                         placeholder="Your Name"
                                     />
                                 </div>
@@ -94,14 +94,14 @@ const contact = () => {
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full py-3 px-5 shadow-2xl focus:ring-1 focus:ring-dark rounded md:text-lg"
+                                        className="w-full py-3 px-5 shadow-2xl focus:ring-1 focus:ring-dark rounded md:text-lg dark:bg-zinc-800 dark:text-light"
                                         placeholder="Your Email"
                                     />
                                 </div>
                                 <div className='w-full mt-2'>
                                     <textarea
                                         rows={7}
-                                        className="w-full py-3 px-5 shadow-2xl focus:ring-1 focus:ring-dark rounded md:text-lg"
+                                        className="w-full py-3 px-5 shadow-2xl focus:ring-1 focus:ring-dark rounded md:text-lg dark:bg-zinc-800 dark:text-light"
                                         placeholder="Your Message"
                                         required
                                         value={message}

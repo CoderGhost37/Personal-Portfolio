@@ -14,7 +14,7 @@ const experience = ({ workExperience, testimonials }: { workExperience: any, tes
                 <title>Kushagra Mathur | Experience</title>
                 <meta name='description' content='Experience page of my portfolio website' />
             </Head>
-            <TransitionEffect />
+            {/* <TransitionEffect /> */}
             <main className='flex w-full flex-col items-center justify-center'>
                 <Experience workExperience={workExperience} />
                 <Testimonials testimonials={testimonials} />

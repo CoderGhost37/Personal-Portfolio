@@ -8,7 +8,7 @@ import React from 'react';
 const Home = () => {
   return (
     <main className='flex items-center text-dark dark:text-light w-full min-h-screen'>
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
       <Layout classStyles='pt-16 sm:pt-8'>
         <div className='flex lg:flex-col items-center justify-between w-full'>
           <div className='w-1/2 lg:w-3/4 md:w-full'>
