@@ -5,6 +5,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import { client } from '../../lib/sanity.client';
 import Experience from '@/components/Experience';
 import Testimonials from '@/components/Testimonials';
+import TransitionEffect from '@/components/TransitionEffect';
 
 const experience = ({ workExperience, testimonials }: { workExperience: any, testimonials: any }) => {
     return (
@@ -13,7 +14,7 @@ const experience = ({ workExperience, testimonials }: { workExperience: any, tes
                 <title>Kushagra Mathur | Experience</title>
                 <meta name='description' content='Experience page of my portfolio website' />
             </Head>
-
+            <TransitionEffect />
             <main className='flex w-full flex-col items-center justify-center'>
                 <Experience workExperience={workExperience} />
                 <Testimonials testimonials={testimonials} />

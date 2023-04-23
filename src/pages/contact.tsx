@@ -5,6 +5,7 @@ import React, { useRef, useState } from 'react'
 import { MdOutlineEmail } from 'react-icons/md';
 import { BsWhatsapp } from 'react-icons/bs';
 import Link from 'next/link';
+import TransitionEffect from '@/components/TransitionEffect';
 
 const contact = () => {
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -38,7 +39,7 @@ const contact = () => {
                     content='Contact page of my portfolio website'
                 />
             </Head>
-
+            <TransitionEffect />
             <main className='w-full max-w-7xl mx-auto flex flex-col items-center justify-center'>
                 <Layout classStyles='pt-16'>
                     <AnimatedText

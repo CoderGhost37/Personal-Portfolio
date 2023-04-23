@@ -6,6 +6,7 @@ import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import Skills from '@/components/Skills'
 import { client, urlFor } from '../../lib/sanity.client'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const AnimatedNumbers = ({ value }: { value: number }) => {
     const ref: any = useRef(null)
@@ -39,7 +40,7 @@ const about = ({ about, skills }: { about: any, skills: any }) => {
                 <title>Kushagra Mathur | About</title>
                 <meta name="description" content="About page of my portfolio website" />
             </Head>
-
+            <TransitionEffect />
             <main className='flex w-full flex-col items-center justify-center dark:text-light'>
                 <Layout classStyles='pt-16 px-20'>
                     <AnimatedText text='Passion Fuels Purpose' classStyles='lg:!text-6xl sm:!text-5xl xs:!text-4xl sm:mb-8 mb-16' />
