@@ -8,7 +8,7 @@ import React from 'react';
 const Home = () => {
   return (
     <main className='flex items-center text-dark dark:text-light w-full min-h-screen'>
-      {/* <TransitionEffect /> */}
+      <TransitionEffect />
       <Layout classStyles='pt-16 sm:pt-8'>
         <div className='flex lg:flex-col items-center justify-between w-full'>
           <div className='w-1/2 lg:w-3/4 md:w-full'>
@@ -29,7 +29,8 @@ const Home = () => {
             />
             <p className='my-4 text-base lg:text-lg md:text-base sm:text-sm font-medium'>
               As a skilled full-stack developer, I am dedicated to turning ideas
-              into innovative web applications. Explore my latest projects, showcasing my expertise in React.js and web development.
+              into innovative web applications. Explore my latest projects,
+              showcasing my expertise in React.js and web development.
             </p>
             <div className='mt-2 lg:self-center'>
               <Link

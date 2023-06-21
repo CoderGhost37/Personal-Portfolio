@@ -1,47 +1,47 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: "projects",
-  title: "Projects",
-  type: "document",
+  name: 'projects',
+  title: 'Projects',
+  type: 'document',
   fields: [
     defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: 'title',
+      title: 'Title',
+      type: 'string',
     }),
     defineField({
-      name: "projectLink",
-      title: "Project Link",
-      type: "string",
+      name: 'projectLink',
+      title: 'Project Link',
+      type: 'string',
     }),
     defineField({
-      name: "codeLink",
-      title: "Code Link",
-      type: "string",
+      name: 'codeLink',
+      title: 'Code Link',
+      type: 'string',
     }),
     defineField({
-      name: "description",
-      title: "Description",
-      type: "text",
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     }),
     defineField({
-      name: "img",
-      title: "Image",
-      type: "image",
+      name: 'img',
+      title: 'Image',
+      type: 'image',
       options: {
         hotspot: true,
       },
     }),
     defineField({
-      name: "tags",
-      title: "Tags",
-      type: "array",
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
       of: [
         {
-          name: "tag",
-          title: "Tag",
-          type: "string",
+          name: 'tag',
+          title: 'Tag',
+          type: 'string',
         },
       ],
     }),

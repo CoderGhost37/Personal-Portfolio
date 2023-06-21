@@ -7,36 +7,45 @@ import Experience from '@/components/Experience';
 import Testimonials from '@/components/Testimonials';
 import TransitionEffect from '@/components/TransitionEffect';
 
-const experience = ({ workExperience, testimonials }: { workExperience: any, testimonials: any }) => {
-    return (
-        <div>
-            <Head>
-                <title>Kushagra Mathur | Experience</title>
-                <meta name='description' content='Experience page of my portfolio website' />
-            </Head>
-            {/* <TransitionEffect /> */}
-            <main className='flex w-full flex-col items-center justify-center'>
-                <Experience workExperience={workExperience} />
-                <Testimonials testimonials={testimonials} />
-            </main>
-        </div>
-    );
+const experience = ({
+  workExperience,
+  testimonials,
+}: {
+  workExperience: any;
+  testimonials: any;
+}) => {
+  return (
+    <div>
+      <Head>
+        <title>Kushagra Mathur | Experience</title>
+        <meta
+          name='description'
+          content='Experience page of my portfolio website'
+        />
+      </Head>
+      <TransitionEffect />
+      <main className='flex w-full flex-col items-center justify-center'>
+        <Experience workExperience={workExperience} />
+        <Testimonials testimonials={testimonials} />
+      </main>
+    </div>
+  );
 };
 
 export const getStaticProps = async () => {
-    const workExperienceQuery = '*[_type == "workExperience"]';
-    const workExperience = await client.fetch(workExperienceQuery);
+  const workExperienceQuery = '*[_type == "workExperience"]';
+  const workExperience = await client.fetch(workExperienceQuery);
 
-    const testimonialsQuery = '*[_type == "testimonials"]';
-    const testimonials = await client.fetch(testimonialsQuery);
+  const testimonialsQuery = '*[_type == "testimonials"]';
+  const testimonials = await client.fetch(testimonialsQuery);
 
-    return {
-        props: {
-            workExperience,
-            testimonials
-        },
-        revalidate: 3 * 60 * 60,
-    };
+  return {
+    props: {
+      workExperience,
+      testimonials,
+    },
+    revalidate: 3 * 60 * 60,
+  };
 };
 
 export default experience;

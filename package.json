@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sanity": "sanity start"
+    "sanity": "sanity start",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@sanity/icons": "^2.1.0",
