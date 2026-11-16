@@ -18,6 +18,7 @@ const instrumentSerif = Instrument_Serif({
 const description = stripEmphasis(profile.bio);
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kushagramathur.com'),
   title: profile.name,
   description,
   openGraph: { title: profile.name, description, type: 'website' },
@@ -31,6 +32,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${GeistSans.variable} ${GeistMono.variable} ${instrumentSerif.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <noscript>
+          <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important;filter:none!important}`}</style>
+        </noscript>
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>
