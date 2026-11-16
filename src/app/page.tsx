@@ -1,5 +1,4 @@
 import { ConnectCard } from '@/components/connect';
-import { EducationList } from '@/components/education';
 import { ExperienceList } from '@/components/experience';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
@@ -27,13 +26,10 @@ export default function Home() {
             <Chips items={about.stack} />
           </div>
         </Section>
-        <Projects />
         <Section id='experience'>
           <ExperienceList />
         </Section>
-        <Section id='education'>
-          <EducationList />
-        </Section>
+        <Projects />
         <Section id='connect'>
           <ConnectCard />
         </Section>

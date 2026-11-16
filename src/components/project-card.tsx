@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { FiArrowUpRight, FiGithub } from 'react-icons/fi';
 import type { PointerEvent } from 'react';
 import type { Project } from '@/content';
 
@@ -60,28 +61,29 @@ export function ProjectCard({
             {project.year}
           </span>
         </div>
-        <div className='project-meta'>
-          <p className='project-tagline text-muted text-[13px] leading-snug'>
-            {project.tagline}
-          </p>
-          <div className='project-extras'>
-            <ul className='project-chips'>
-              {project.stack.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <span aria-hidden className='text-fg'>
-              Live ↗
-            </span>
-            <a
-              href={project.code}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='project-code'
-            >
-              Code
-            </a>
-          </div>
+        <p className='text-dim text-[12.5px] leading-snug'>{project.tagline}</p>
+        <p className='text-muted mt-2.5 line-clamp-3 text-[13.5px] leading-relaxed'>
+          {project.summary}
+        </p>
+        <div className='mt-3 flex items-center gap-3 font-mono text-[11.5px] leading-none'>
+          <a
+            href={project.live}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='project-action'
+          >
+            <FiArrowUpRight aria-hidden className='size-3.5' />
+            Live
+          </a>
+          <a
+            href={project.code}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='project-action'
+          >
+            <FiGithub aria-hidden className='size-3.5' />
+            GitHub
+          </a>
         </div>
       </div>
     </article>

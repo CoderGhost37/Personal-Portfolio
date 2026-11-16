@@ -33,23 +33,12 @@ export type Role = {
   stack: string[];
 };
 
-export type School = {
-  name: string;
-  degree: string;
-  start: number;
-  end: number;
-  location: string;
-  detail: string;
-};
-
-export type SectionId =
-  'about' | 'projects' | 'experience' | 'education' | 'connect';
+export type SectionId = 'about' | 'experience' | 'projects' | 'connect';
 
 export const sections: { id: SectionId; label: string }[] = [
   { id: 'about', label: 'About' },
-  { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'education', label: 'Education' },
+  { id: 'projects', label: 'Projects' },
   { id: 'connect', label: 'Connect' },
 ];
 
@@ -92,7 +81,7 @@ export const projects: Project[] = [
     title: 'Vizora',
     tagline: 'AI thumbnail generator',
     summary:
-      'Turns a prompt into a click-worthy YouTube thumbnail for content creators.',
+      'Describe your video in a chat and get a ready-to-post YouTube thumbnail, then refine it by asking for changes.',
     year: 2026,
     stack: ['Next.js', 'Prisma', 'Vercel AI SDK'],
     live: 'https://vizora.kushagramathur.com/',
@@ -105,7 +94,7 @@ export const projects: Project[] = [
     title: 'Ticketr',
     tagline: 'Event ticketing platform',
     summary:
-      'Real-time ticket queues, smart waiting lists, automatic refunds and instant payouts with Stripe Connect.',
+      'Event ticketing with a live queue and waiting list. Organizers get paid through Stripe Connect, and refunds are automatic.',
     year: 2025,
     stack: ['Next.js', 'Convex', 'Clerk', 'Stripe Connect'],
     live: 'https://ticket-r.vercel.app/',
@@ -118,7 +107,7 @@ export const projects: Project[] = [
     title: 'Cinnavo LMS',
     tagline: 'Learning platform',
     summary:
-      'A full learning management system for learners and admins, with paid courses and progress tracking.',
+      'Admins build courses from chapters and video lessons. Learners pay with Stripe and track progress lesson by lesson.',
     year: 2025,
     stack: ['Next.js', 'shadcn/ui', 'Stripe'],
     live: 'https://lms.kushagramathur.com/',
@@ -131,7 +120,7 @@ export const projects: Project[] = [
     title: 'Notebook RAG',
     tagline: 'Chat with your documents',
     summary:
-      'Upload PDFs, CSVs, docs, a website URL or raw text, then ask questions in plain language.',
+      'Upload PDFs and docs, or paste a URL or raw text, then ask questions. Answers are grounded in your own sources.',
     year: 2025,
     stack: ['Next.js', 'OpenAI', 'Qdrant', 'Postgres'],
     live: 'https://notebook-llm-rag.vercel.app',
@@ -183,25 +172,6 @@ export const experience: Role[] = [
       'Connected backend services to frontend screens and tuned their performance.',
     ],
     stack: ['React', 'TypeScript'],
-  },
-];
-
-export const education: School[] = [
-  {
-    name: 'Kalinga University',
-    degree: 'B.Tech, Computer Science',
-    start: 2020,
-    end: 2024,
-    location: 'India',
-    detail: 'CGPA 9.18',
-  },
-  {
-    name: 'Seth Anandram Jaipuria School',
-    degree: 'Class XII, CBSE',
-    start: 2019,
-    end: 2020,
-    location: 'Ghaziabad, India',
-    detail: '94.2%',
   },
 ];
 

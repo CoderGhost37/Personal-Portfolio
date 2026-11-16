@@ -195,60 +195,26 @@
     z-index: 4;
     border-radius: 16px;
   }
-  .project-code {
+  .project-action {
     position: relative;
     z-index: 5;
-    color: var(--muted);
-    transition: color 0.2s;
-  }
-  .project-code:hover {
-    color: var(--fg);
-  }
-
-  .project-meta {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    margin-top: 2px;
-  }
-  .project-extras {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-    font-family: var(--font-mono);
-    font-size: 11.5px;
-    line-height: 1;
-    white-space: nowrap;
-  }
-  .project-chips {
-    display: flex;
-    gap: 6px;
-    min-width: 0;
-    flex: 1;
-    overflow: hidden;
-    mask-image: linear-gradient(to right, #000 80%, transparent);
-    color: var(--muted);
-  }
-  .project-chips li {
-    flex: none;
-    padding: 4px 7px;
-    border-radius: 6px;
+    gap: 4px;
+    padding: 5px 8px;
+    border-radius: 999px;
     border: 1px solid var(--line);
+    color: var(--muted);
+    transition:
+      color 0.2s,
+      border-color 0.2s;
+  }
+  .project-action:hover {
+    color: var(--fg);
+    border-color: color-mix(in oklab, var(--fg) 25%, var(--line));
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .project-tagline,
-    .project-extras {
-      grid-area: 1 / 1;
-      transition:
-        opacity 0.3s,
-        transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
-    }
-    .project-extras {
-      margin-top: 0;
-      opacity: 0;
-      transform: translateY(8px);
-    }
     .project-card:is(:hover, :focus-within) {
       transform: translateY(-3px);
       border-color: color-mix(in oklab, var(--fg) 14%, var(--line));
@@ -258,14 +224,6 @@
     }
     .project-card:is(:hover, :focus-within) .project-shot img {
       object-position: 50% 100%;
-    }
-    .project-card:is(:hover, :focus-within) .project-tagline {
-      opacity: 0;
-      transform: translateY(-8px);
-    }
-    .project-card:is(:hover, :focus-within) .project-extras {
-      opacity: 1;
-      transform: none;
     }
   }
 }
@@ -282,9 +240,7 @@
     transform: none !important;
   }
   .pill:active,
-  .project-card:is(:hover, :focus-within),
-  .project-tagline,
-  .project-extras {
+  .project-card:is(:hover, :focus-within) {
     transform: none !important;
   }
   .project-shot img {
