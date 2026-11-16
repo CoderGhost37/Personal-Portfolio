@@ -127,6 +127,22 @@
     background-size: 10px 10px;
   }
 
+  .dots {
+    display: none;
+    height: 150px;
+    padding: 20px;
+    background: radial-gradient(
+        color-mix(in oklab, var(--dim) 55%, transparent) 1px,
+        transparent 0
+      )
+      center / 10px 10px content-box;
+  }
+  @media (min-width: 600px) {
+    .dots {
+      display: block;
+    }
+  }
+
   /* 13px so the 1px bars have a true center pixel to sit on a line. */
   .cross {
     position: absolute;

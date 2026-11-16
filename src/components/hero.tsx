@@ -22,7 +22,11 @@ export function Hero() {
 
   return (
     <motion.div initial='hidden' animate='show'>
+      <div aria-hidden className='dots rule' />
+
       <div className='rule flex'>
+        <Cross at='top-left' desktopOnly />
+        <Cross at='top-right' desktopOnly />
         <Cross at='bottom-left' />
         <Cross at='bottom-right' />
         <div className='w-[35%] shrink-0 p-2 sm:w-auto sm:p-5'>
