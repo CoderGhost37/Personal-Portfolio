@@ -1,0 +1,353 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant fine (@media (hover: hover) and (pointer: fine));
+
+@theme {
+  --breakpoint-sm: 600px;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-signal: var(--signal);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+}
+
+:root,
+.dark {
+  --bg: #0b0b0d;
+  --surface-2: #1b1b1f;
+  --line: #222227;
+  --fg: #ededef;
+  --muted: #9a9aa2;
+  --dim: #5f5f68;
+  --signal: #7dd3a8;
+  --shadow: 0 18px 40px -12px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
+}
+
+.light {
+  --bg: #fbfbfa;
+  --surface-2: #f2f2f0;
+  --line: #e6e6e3;
+  --fg: #121214;
+  --muted: #5e5e66;
+  --dim: #9a9aa0;
+  --signal: #1f9d63;
+  --shadow: 0 18px 40px -14px rgb(20 20 30 / 0.35);
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--fg) 85%, transparent);
+    color: var(--bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* The page is a 720px column. Its side lines sit above the rows so
+     full-bleed bands and rules never paint over them. */
+  .frame {
+    position: relative;
+    width: min(720px, calc(100% - 16px));
+    margin-inline: auto;
+  }
+  .frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    border-inline: 1px solid var(--line);
+  }
+
+  .rule {
+    position: relative;
+  }
+  .rule::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100vw;
+    width: 200vw;
+    height: 1px;
+    background: var(--line);
+    pointer-events: none;
+  }
+
+  .hatch {
+    height: 24px;
+  }
+  .hatch::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    left: -100vw;
+    width: 200vw;
+    background: repeating-linear-gradient(
+      315deg,
+      var(--line) 0 1px,
+      transparent 0 50%
+    );
+    background-size: 10px 10px;
+  }
+
+  .dots {
+    display: none;
+    height: 150px;
+    padding: 20px;
+    background: radial-gradient(
+        color-mix(in oklab, var(--dim) 55%, transparent) 1px,
+        transparent 0
+      )
+      center / 10px 10px content-box;
+  }
+  @media (min-width: 600px) {
+    .dots {
+      display: block;
+    }
+  }
+
+  /* 13px so the 1px bars have a true center pixel to sit on a line. */
+  .cross {
+    position: absolute;
+    z-index: 31;
+    width: 13px;
+    height: 13px;
+    pointer-events: none;
+  }
+  .cross::before,
+  .cross::after {
+    content: '';
+    position: absolute;
+    background: var(--dim);
+  }
+  .cross::before {
+    inset-inline: 0;
+    top: 6px;
+    height: 1px;
+  }
+  .cross::after {
+    inset-block: 0;
+    left: 6px;
+    width: 1px;
+  }
+
+  /* Covers the side margins as it sticks, and redraws the column lines
+     the overlay can't reach above z-40. */
+  .site-header {
+    background: var(--bg);
+    box-shadow: 0 0 0 100vmax var(--bg);
+    clip-path: inset(0 -100vmax);
+    border-inline: 1px solid var(--line);
+  }
+
+  .icon-tile {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    color: var(--dim);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 32px;
+    padding: 0 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1;
+    transition:
+      color 0.2s,
+      border-color 0.2s,
+      transform 0.15s;
+  }
+  .pill:hover {
+    color: var(--fg);
+    border-color: color-mix(in oklab, var(--fg) 22%, var(--line));
+  }
+  .pill:active {
+    transform: scale(0.96);
+  }
+  .project-card {
+    --dash: color-mix(in oklab, var(--fg) 12%, var(--line));
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 6px;
+    border-radius: 14px;
+    border: 1px dashed var(--dash);
+    background: var(--bg);
+    transition: border-color 0.35s;
+  }
+  .project-card:has(.project-link:focus-visible) {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+  }
+
+  .project-stage {
+    --mx: 50%;
+    --my: 30%;
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 9px;
+    isolation: isolate;
+  }
+  .project-stage::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+  }
+  .project-stage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background: radial-gradient(
+      240px circle at var(--mx) var(--my),
+      rgb(255 255 255 / 0.32),
+      transparent 70%
+    );
+    mix-blend-mode: soft-light;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .project-fade {
+    position: absolute;
+    inset: auto 0 0;
+    height: 42%;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+  }
+
+  .project-shot {
+    position: absolute;
+    top: 9%;
+    left: 8%;
+    right: 8%;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    box-shadow: var(--shadow);
+  }
+  .project-shot img {
+    object-position: 50% 0%;
+    transition: object-position 1.6s ease-in-out;
+  }
+
+  .project-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    border-radius: 14px;
+  }
+  .project-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: auto;
+    border-top: 1px dashed var(--dash);
+  }
+  .project-actions a {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding-block: 9px 3px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .project-actions a:first-child {
+    border-right: 1px dashed var(--dash);
+  }
+  .project-actions a:hover {
+    color: var(--fg);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .project-card:is(:hover, :focus-within) {
+      --dash: color-mix(in oklab, var(--fg) 26%, var(--line));
+    }
+    .project-card:is(:hover, :focus-within) .project-stage::after {
+      opacity: 1;
+    }
+    .project-card:is(:hover, :focus-within) .project-shot img {
+      object-position: 50% 100%;
+    }
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    filter: none !important;
+    transform: none !important;
+  }
+  .pill:active {
+    transform: none !important;
+  }
+  .project-shot img {
+    transition: none;
+    object-position: 50% 0% !important;
+  }
+}
