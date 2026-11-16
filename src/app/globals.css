@@ -269,3 +269,26 @@
     }
   }
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    filter: none !important;
+    transform: none !important;
+  }
+  .pill:active,
+  .project-card:is(:hover, :focus-within),
+  .project-tagline,
+  .project-extras {
+    transform: none !important;
+  }
+  .project-shot img {
+    transition: none;
+    object-position: 50% 0% !important;
+  }
+}

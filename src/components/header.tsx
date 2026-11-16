@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { sections, type SectionId } from '@/content';
 import { ThemeToggle } from './theme-toggle';
@@ -65,7 +66,18 @@ export function Header() {
                   aria-current={active === id ? 'location' : undefined}
                   className='text-muted hover:text-fg aria-[current]:text-fg relative block rounded-full px-2.5 py-1 text-[13px] transition-colors'
                 >
-                  {label}
+                  {active === id && (
+                    <motion.span
+                      layoutId='nav-pill'
+                      transition={{
+                        type: 'spring',
+                        bounce: 0.18,
+                        duration: 0.45,
+                      }}
+                      className='border-line bg-surface-2 absolute inset-0 rounded-full border'
+                    />
+                  )}
+                  <span className='relative'>{label}</span>
                 </a>
               </li>
             ))}
