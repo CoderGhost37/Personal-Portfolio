@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { ImageResponse } from 'next/og';
 import { profile } from '@/content';
+import logo from '@/lib/logo.json';
 
 export const alt = profile.name;
 export const size = { width: 1200, height: 630 };
@@ -31,6 +32,19 @@ export default async function OpengraphImage() {
         color: '#EDEDEF',
       }}
     >
+      <svg
+        viewBox={logo.viewBox.join(' ')}
+        height={64}
+        width={(64 * logo.viewBox[2]) / logo.viewBox[3]}
+        style={{ marginBottom: 48 }}
+      >
+        {Object.values(logo.under).map((points) => (
+          <polygon key={points} points={points} fill='#8A8A91' />
+        ))}
+        {Object.values(logo.over).map((points) => (
+          <polygon key={points} points={points} fill='#EDEDEF' />
+        ))}
+      </svg>
       <div
         style={{
           fontFamily: 'Instrument Serif',

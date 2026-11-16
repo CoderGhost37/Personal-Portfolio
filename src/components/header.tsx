@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { sections, type SectionId } from '@/content';
+import { Logo } from './logo';
 import { ThemeToggle } from './theme-toggle';
 
 function useScrolledPast(px: number) {
@@ -52,10 +53,10 @@ export function Header() {
       <div className='mx-auto flex h-14 max-w-[672px] items-center gap-4 px-4'>
         <a
           href='#top'
-          aria-label='Back to top'
-          className='bg-fg text-bg grid size-8 place-items-center rounded-lg font-mono text-[11px] font-semibold'
+          aria-label='Kushagra Mathur, back to top'
+          className='-m-1.5 rounded-md p-1.5'
         >
-          KM
+          <Logo className='h-[18px] w-auto' />
         </a>
         <nav aria-label='Sections' className='hidden flex-1 sm:block'>
           <ul className='flex items-center gap-0.5'>
