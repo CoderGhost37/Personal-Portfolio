@@ -122,8 +122,8 @@ export const experience: Role[] = [
     location: 'Bengaluru',
     logo: '/logos/wisemonk-mark.png',
     points: [
-      'Build dashboards end to end, from the APIs and data behind them to the interface.',
-      'Help improve the customer funnel with full-stack changes across the product.',
+      'Build dashboards end to end, from the APIs and data queries behind them to the interface.',
+      'Help improve the customer funnel with changes across the frontend and backend.',
     ],
   },
   {
@@ -134,9 +134,10 @@ export const experience: Role[] = [
     location: 'Hyderabad',
     logo: '/logos/tcs-mark.png',
     points: [
-      'Built and maintained 30+ reusable frontend components for an e-commerce platform.',
+      'Optimized the product and pricing microservices, raising API throughput by 28% and cutting response times on critical e-commerce flows.',
+      'Built event-driven communication between the pricing and inventory services to decouple them.',
+      'Built and maintained 30+ reusable frontend components for a large e-commerce platform.',
       'Cut product page load time by 4% with rendering optimizations and lazy loading.',
-      'Optimized the product and pricing microservices, raising API throughput by 28%.',
     ],
   },
   {
@@ -147,9 +148,9 @@ export const experience: Role[] = [
     location: 'Hyderabad',
     logo: '/logos/osmosys-mark.png',
     points: [
-      'Built frontend interfaces that reduced average page load times by 6%.',
-      'Connected frontend apps to backend services and REST APIs.',
+      'Built apps across the stack, wiring component-based interfaces to backend services through REST APIs.',
       'Cut API response times by 13% through query tuning and async processing.',
+      'Improved page rendering speed by 6% and handled forms, routing and state management on the frontend.',
     ],
   },
   {
@@ -160,9 +161,9 @@ export const experience: Role[] = [
     location: 'Remote',
     logo: '/logos/thinkroman-mark.png',
     points: [
+      'Built the company’s full-stack website on my own, from the data model and CMS to the pages.',
       'Built the frontend for several of the company’s live websites.',
-      'Built the company’s full-stack website on my own.',
-      'Worked with design and product teams on responsive, accessible interfaces.',
+      'Worked across SQL and NoSQL databases and a headless CMS behind the company’s sites.',
     ],
   },
 ];
