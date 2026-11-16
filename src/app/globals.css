@@ -9,7 +9,6 @@
 
 @theme inline {
   --color-bg: var(--bg);
-  --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-line: var(--line);
   --color-fg: var(--fg);
@@ -24,7 +23,6 @@
 :root,
 .dark {
   --bg: #0b0b0d;
-  --surface: #131316;
   --surface-2: #1b1b1f;
   --line: #222227;
   --fg: #ededef;
@@ -37,7 +35,6 @@
 
 .light {
   --bg: #fbfbfa;
-  --surface: #ffffff;
   --surface-2: #f2f2f0;
   --line: #e6e6e3;
   --fg: #121214;

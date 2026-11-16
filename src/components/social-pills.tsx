@@ -1,12 +1,21 @@
-import { socials } from '@/content';
+import type { IconType } from 'react-icons';
+import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+import { FiMail } from 'react-icons/fi';
+import { socials, type SocialKind } from '@/content';
 import { externalLinkProps } from '@/lib/links';
-import { socialIcons } from './social-icon';
+
+const icons: Record<SocialKind, IconType> = {
+  x: FaXTwitter,
+  linkedin: FaLinkedinIn,
+  github: FaGithub,
+  email: FiMail,
+};
 
 export function SocialPills() {
   return (
     <ul className='flex flex-wrap gap-2'>
       {socials.map(({ kind, label, href }) => {
-        const Icon = socialIcons[kind];
+        const Icon = icons[kind];
         return (
           <li key={kind}>
             <a href={href} {...externalLinkProps(href)} className='pill'>

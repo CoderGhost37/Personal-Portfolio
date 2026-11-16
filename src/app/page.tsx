@@ -1,4 +1,4 @@
-import { ConnectCard } from '@/components/connect';
+import { Connect } from '@/components/connect';
 import { ExperienceList } from '@/components/experience';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
@@ -38,7 +38,7 @@ export default function Home() {
           <Projects />
           <div aria-hidden className='hatch rule' />
           <Section id='connect'>
-            <ConnectCard />
+            <Connect />
           </Section>
           <div aria-hidden className='hatch rule' />
         </main>
