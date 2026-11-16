@@ -1,5 +1,10 @@
-import { profile } from '@/content';
+import { Header } from '@/components/header';
 
 export default function Home() {
-  return <main>{profile.name}</main>;
+  return (
+    <>
+      <Header />
+      <main className='mx-auto max-w-[672px] px-4' />
+    </>
+  );
 }
