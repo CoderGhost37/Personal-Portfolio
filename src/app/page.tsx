@@ -5,7 +5,7 @@ import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
 import { Projects } from '@/components/projects';
 import { RichText } from '@/components/rich-text';
-import { Chips, Section } from '@/components/section';
+import { Section } from '@/components/section';
 import { about } from '@/content';
 
 export default function Home() {
@@ -21,9 +21,6 @@ export default function Home() {
                 <RichText text={paragraph} />
               </p>
             ))}
-          </div>
-          <div className='mt-5'>
-            <Chips items={about.stack} />
           </div>
         </Section>
         <Section id='experience'>

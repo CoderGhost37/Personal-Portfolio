@@ -13,7 +13,6 @@ export type Project = {
   tagline: string;
   summary: string;
   year: number;
-  stack: string[];
   live: string;
   code: string;
   image: `/projects/${string}.png`;
@@ -30,7 +29,6 @@ export type Role = {
   location: string;
   logo?: string;
   points: string[];
-  stack: string[];
 };
 
 export type SectionId = 'about' | 'experience' | 'projects' | 'connect';
@@ -59,19 +57,7 @@ export const profile = {
 export const about = {
   paragraphs: [
     'I started with React side projects in college and never stopped shipping. These days I work across the stack with *Next.js, TypeScript, Postgres and Java*, and I like owning a feature from the first migration to the last hover state.',
-    'Recently I have been building AI products. *Vizora* turns a prompt into a ready-to-post YouTube thumbnail, and *Notebook RAG* lets you chat with your own PDFs, docs and websites.',
-  ],
-  stack: [
-    'TypeScript',
-    'React',
-    'Next.js',
-    'Node.js',
-    'Java',
-    'Spring Boot',
-    'PostgreSQL',
-    'MongoDB',
-    'Tailwind CSS',
-    'Vercel AI SDK',
+    'Recently I have been building AI products. *Vizora* turns a prompt into a ready-to-post YouTube thumbnail, and my *Lovable clone* turns a chat into a working app.',
   ],
 };
 
@@ -83,7 +69,6 @@ export const projects: Project[] = [
     summary:
       'Describe your video in a chat and get a ready-to-post YouTube thumbnail, then refine it by asking for changes.',
     year: 2026,
-    stack: ['Next.js', 'Prisma', 'Vercel AI SDK'],
     live: 'https://vizora.kushagramathur.com/',
     code: 'https://github.com/CoderGhost37/thumbnail-generator',
     image: '/projects/vizora.png',
@@ -96,7 +81,6 @@ export const projects: Project[] = [
     summary:
       'Event ticketing with a live queue and waiting list. Organizers get paid through Stripe Connect, and refunds are automatic.',
     year: 2025,
-    stack: ['Next.js', 'Convex', 'Clerk', 'Stripe Connect'],
     live: 'https://ticket-r.vercel.app/',
     code: 'https://github.com/CoderGhost37/Ticketr',
     image: '/projects/ticketr.png',
@@ -109,24 +93,22 @@ export const projects: Project[] = [
     summary:
       'Admins build courses from chapters and video lessons. Learners pay with Stripe and track progress lesson by lesson.',
     year: 2025,
-    stack: ['Next.js', 'shadcn/ui', 'Stripe'],
     live: 'https://lms.kushagramathur.com/',
     code: 'https://github.com/CoderGhost37/Lms',
     image: '/projects/cinnavo-lms.png',
     wallpaper: ['#5a2a12', '#e0894a', '#f7dcb8'],
   },
   {
-    slug: 'notebook-rag',
-    title: 'Notebook RAG',
-    tagline: 'Chat with your documents',
+    slug: 'lovable-clone',
+    title: 'Lovable Clone',
+    tagline: 'AI app builder',
     summary:
-      'Upload PDFs and docs, or paste a URL or raw text, then ask questions. Answers are grounded in your own sources.',
-    year: 2025,
-    stack: ['Next.js', 'OpenAI', 'Qdrant', 'Postgres'],
-    live: 'https://notebook-llm-rag.vercel.app',
-    code: 'https://github.com/CoderGhost37/Notebook-LLM-RAG',
-    image: '/projects/notebook-rag.png',
-    wallpaper: ['#12352a', '#4fae83', '#d3efe1'],
+      'Describe an app in chat and get working code in an in-browser editor with a live preview.',
+    year: 2026,
+    live: 'https://lovable.kushagramathur.com',
+    code: 'https://github.com/CoderGhost37/lovable-clone',
+    image: '/projects/lovable-clone.png',
+    wallpaper: ['#1b1446', '#6d5dfc', '#f0a6ca'],
   },
 ];
 
@@ -135,16 +117,37 @@ export const moreProjectsHref =
 
 export const experience: Role[] = [
   {
-    company: 'C3A Labs',
+    company: 'WiseMonk',
     title: 'Software Engineer',
-    start: '2025-08',
+    start: '2026-10',
     end: 'present',
-    location: 'India',
+    location: 'Bengaluru',
+    points: [],
+  },
+  {
+    company: 'Tata Consultancy Services',
+    title: 'Systems Engineer',
+    start: '2025-02',
+    end: '2026-09',
+    location: 'Hyderabad',
     points: [
-      'Build KaraxAI, including the template manager admin panel and the affiliate web app.',
-      'Work across the Next.js frontends and the Django backend.',
+      'Built and maintained 30+ reusable frontend components for an e-commerce platform.',
+      'Cut product page load time by 4% with rendering optimizations and lazy loading.',
+      'Optimized the product and pricing microservices, raising API throughput by 28%.',
     ],
-    stack: ['Next.js', 'TypeScript', 'Django', 'PostgreSQL'],
+  },
+  {
+    company: 'Osmosys Software Solutions',
+    title: 'Software Engineer Intern',
+    start: '2024-01',
+    end: '2024-03',
+    location: 'Hyderabad',
+    logo: '/logos/osmosys.png',
+    points: [
+      'Built frontend interfaces that reduced average page load times by 6%.',
+      'Connected frontend apps to backend services and REST APIs.',
+      'Cut API response times by 13% through query tuning and async processing.',
+    ],
   },
   {
     company: 'ThinkRoman Ventures',
@@ -155,23 +158,9 @@ export const experience: Role[] = [
     logo: '/logos/thinkroman.png',
     points: [
       'Built the frontend for several of the company’s live websites.',
-      'Designed and built the company’s full-stack website on my own.',
-      'Shipped responsive, accessible interfaces with design and product teams.',
+      'Built the company’s full-stack website on my own.',
+      'Worked with design and product teams on responsive, accessible interfaces.',
     ],
-    stack: ['Next.js', 'Sanity', 'MongoDB', 'Tailwind CSS'],
-  },
-  {
-    company: 'Osmosys Software Solutions',
-    title: 'Software Engineer Intern',
-    start: '2024-01',
-    end: '2024-03',
-    location: 'India',
-    logo: '/logos/osmosys.png',
-    points: [
-      'Built reusable components for a large production codebase.',
-      'Connected backend services to frontend screens and tuned their performance.',
-    ],
-    stack: ['React', 'TypeScript'],
   },
 ];
 

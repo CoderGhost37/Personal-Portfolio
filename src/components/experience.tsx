@@ -3,14 +3,19 @@
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useState } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
-import { experience } from '@/content';
+import { experience, type Role } from '@/content';
 import { formatRoleDates } from '@/lib/format';
 import { RowContent } from './timeline-row';
-import { Chips } from './section';
+
+const hasDetails = (role: Role) => role.points.length > 0;
+
+const firstWithDetails = experience.findIndex(hasDetails);
 
 export function ExperienceList() {
   const reduceMotion = useReducedMotion();
-  const [open, setOpen] = useState<ReadonlySet<number>>(() => new Set([0]));
+  const [open, setOpen] = useState<ReadonlySet<number>>(
+    () => new Set([firstWithDetails]),
+  );
 
   const toggle = (index: number) =>
     setOpen((prev) => {
@@ -22,6 +27,24 @@ export function ExperienceList() {
   return (
     <ul>
       {experience.map((role, index) => {
+        const row = {
+          name: role.company,
+          subtitle: role.title,
+          logo: role.logo,
+          current: role.end === 'present',
+          dates: formatRoleDates(role),
+          aside: role.location,
+        };
+        if (!hasDetails(role)) {
+          return (
+            <li
+              key={role.company}
+              className='border-line flex items-start gap-3 border-t py-3.5 first:border-t-0'
+            >
+              <RowContent row={row} />
+            </li>
+          );
+        }
         const expanded = open.has(index);
         const panelId = `role-${index}`;
         return (
@@ -37,14 +60,7 @@ export function ExperienceList() {
               className='group flex w-full items-start gap-3 rounded-lg py-3.5 text-left'
             >
               <RowContent
-                row={{
-                  name: role.company,
-                  subtitle: role.title,
-                  logo: role.logo,
-                  current: role.end === 'present',
-                  dates: formatRoleDates(role),
-                  aside: role.location,
-                }}
+                row={row}
                 trailing={
                   <FiChevronDown
                     aria-hidden
@@ -75,9 +91,6 @@ export function ExperienceList() {
                         <li key={point}>{point}</li>
                       ))}
                     </ul>
-                    <div className='mt-3'>
-                      <Chips items={role.stack} />
-                    </div>
                   </div>
                 </motion.div>
               )}

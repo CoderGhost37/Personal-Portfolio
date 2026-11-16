@@ -31,18 +31,3 @@ export function Section({
     </section>
   );
 }
-
-export function Chips({ items }: { items: string[] }) {
-  return (
-    <ul className='flex flex-wrap gap-1.5'>
-      {items.map((item) => (
-        <li
-          key={item}
-          className='border-line text-muted rounded-md border px-2 py-0.5 font-mono text-[11.5px]'
-        >
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
