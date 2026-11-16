@@ -32,7 +32,11 @@ export default function Home() {
           </Section>
           <div aria-hidden className='hatch rule' />
           <Section id='experience'>
-            <ExperienceList />
+            <div className='rule px-4 py-1'>
+              <Reveal delay={0.08}>
+                <ExperienceList />
+              </Reveal>
+            </div>
           </Section>
           <div aria-hidden className='hatch rule' />
           <Projects />
