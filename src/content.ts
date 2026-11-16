@@ -121,7 +121,10 @@ export const experience: Role[] = [
     end: 'present',
     location: 'Bengaluru',
     logo: '/logos/wisemonk-mark.png',
-    points: [],
+    points: [
+      'Build dashboards end to end, from the APIs and data behind them to the interface.',
+      'Help improve the customer funnel with full-stack changes across the product.',
+    ],
   },
   {
     company: 'Tata Consultancy Services',

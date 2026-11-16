@@ -2,43 +2,20 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import type { ReactNode } from 'react';
-import { FiClock, FiCode, FiMapPin } from 'react-icons/fi';
-import { experience, profile } from '@/content';
+import { profile } from '@/content';
 import { EASE_OUT, rise } from '@/lib/motion';
 import { Cross } from './cross';
-import { LocalTime } from './local-time';
 import { RichText } from './rich-text';
 import { SocialPills } from './social-pills';
 
-const current = experience.find((role) => role.end === 'present');
-
 // Load sequence, in seconds: avatar, then the name word by word, then the
-// rest at 60ms steps. The last item settles at about 1.03s.
+// rest at 60ms steps. The last item settles at about 0.85s.
 const NAME_START = 0.12;
 const WORD_STEP = 0.07;
 const REST_START = 0.28;
 const STEP = 0.06;
 
 const step = (index: number) => REST_START + index * STEP;
-
-const meta: { key: string; icon: ReactNode; label: ReactNode }[] = [
-  {
-    key: 'location',
-    icon: <FiMapPin className='size-3' />,
-    label: profile.location,
-  },
-  { key: 'time', icon: <FiClock className='size-3' />, label: <LocalTime /> },
-  ...(current
-    ? [
-        {
-          key: 'role',
-          icon: <FiCode className='size-3' />,
-          label: `${current.title} @ ${current.company}`,
-        },
-      ]
-    : []),
-];
 
 export function Hero() {
   const nameWords = profile.name.split(' ');
@@ -101,39 +78,11 @@ export function Hero() {
         </div>
       </div>
 
-      <ul className='text-muted font-mono text-[12px] sm:flex'>
-        {meta.map(({ key, icon, label }, i) => (
-          <li
-            key={key}
-            className='rule border-line min-w-0 px-4 py-2.5 sm:not-first:border-l sm:not-last:shrink-0 sm:last:flex-1'
-          >
-            <motion.span
-              variants={rise}
-              custom={step(1 + i)}
-              className='rise flex min-w-0 items-center gap-2.5'
-            >
-              <span aria-hidden className='icon-tile size-5 rounded-md'>
-                {icon}
-              </span>
-              <span className='truncate'>{label}</span>
-            </motion.span>
-          </li>
-        ))}
-      </ul>
-
       <div className='rule p-4'>
-        <motion.p
-          variants={rise}
-          custom={step(1 + meta.length)}
-          className='rise text-muted'
-        >
+        <motion.p variants={rise} custom={step(1)} className='rise text-muted'>
           <RichText text={profile.bio} />
         </motion.p>
-        <motion.div
-          variants={rise}
-          custom={step(2 + meta.length)}
-          className='rise mt-4'
-        >
+        <motion.div variants={rise} custom={step(2)} className='rise mt-4'>
           <SocialPills />
         </motion.div>
       </div>
