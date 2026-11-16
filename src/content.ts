@@ -43,7 +43,7 @@ export const sections: { id: SectionId; label: string }[] = [
 // Text wrapped in *asterisks* renders as emphasized (full-contrast) words.
 export const profile = {
   name: 'Kushagra Mathur',
-  role: 'AI-native software engineer',
+  role: 'Software Engineer',
   location: 'Bengaluru, India',
   timeZone: 'Asia/Kolkata',
   openToWork: true,
