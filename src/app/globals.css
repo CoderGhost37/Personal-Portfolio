@@ -156,7 +156,7 @@
     pointer-events: none;
     background: radial-gradient(
       240px circle at var(--mx) var(--my),
-      rgb(255 255 255 / 0.22),
+      rgb(255 255 255 / 0.32),
       transparent 70%
     );
     mix-blend-mode: soft-light;
