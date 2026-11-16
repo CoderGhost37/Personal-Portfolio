@@ -179,6 +179,15 @@
     border-inline: 1px solid var(--line);
   }
 
+  .icon-tile {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    color: var(--dim);
+  }
+
   .pill {
     display: inline-flex;
     align-items: center;
