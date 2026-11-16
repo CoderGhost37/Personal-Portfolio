@@ -11,7 +11,7 @@ export function ThemeToggle() {
       type='button'
       aria-label='Toggle color theme'
       onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
-      className='grid size-8 place-items-center rounded-full border border-line bg-surface-2 text-muted transition-colors hover:text-fg'
+      className='border-line bg-surface-2 text-muted hover:text-fg grid size-8 place-items-center rounded-full border transition-colors'
     >
       <FiSun className='hidden size-3.5 dark:block' aria-hidden />
       <FiMoon className='size-3.5 dark:hidden' aria-hidden />
