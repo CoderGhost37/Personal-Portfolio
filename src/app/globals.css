@@ -213,14 +213,16 @@
     transform: scale(0.96);
   }
   .project-card {
+    --dash: color-mix(in oklab, var(--fg) 12%, var(--line));
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding: 6px;
-    border-radius: 16px;
-    border: 1px solid var(--line);
-    background: var(--surface);
-    transition:
-      transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
-      border-color 0.35s;
+    border-radius: 14px;
+    border: 1px dashed var(--dash);
+    background: var(--bg);
+    transition: border-color 0.35s;
   }
   .project-card:has(.project-link:focus-visible) {
     outline: 2px solid var(--fg);
@@ -233,7 +235,7 @@
     position: relative;
     aspect-ratio: 16 / 10;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 9px;
     isolation: isolate;
   }
   .project-stage::before {
@@ -267,7 +269,7 @@
     height: 42%;
     z-index: 2;
     pointer-events: none;
-    background: linear-gradient(to bottom, transparent, var(--surface));
+    background: linear-gradient(to bottom, transparent, var(--bg));
   }
 
   .project-shot {
@@ -291,31 +293,37 @@
     position: absolute;
     inset: 0;
     z-index: 4;
-    border-radius: 16px;
+    border-radius: 14px;
   }
-  .project-action {
+  .project-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: auto;
+    border-top: 1px dashed var(--dash);
+  }
+  .project-actions a {
     position: relative;
     z-index: 5;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 4px;
-    padding: 5px 8px;
-    border-radius: 999px;
-    border: 1px solid var(--line);
+    justify-content: center;
+    gap: 6px;
+    padding-block: 9px 3px;
     color: var(--muted);
-    transition:
-      color 0.2s,
-      border-color 0.2s;
+    font-size: 13px;
+    line-height: 1;
+    transition: color 0.2s;
   }
-  .project-action:hover {
+  .project-actions a:first-child {
+    border-right: 1px dashed var(--dash);
+  }
+  .project-actions a:hover {
     color: var(--fg);
-    border-color: color-mix(in oklab, var(--fg) 25%, var(--line));
   }
 
   @media (hover: hover) and (pointer: fine) {
     .project-card:is(:hover, :focus-within) {
-      transform: translateY(-3px);
-      border-color: color-mix(in oklab, var(--fg) 14%, var(--line));
+      --dash: color-mix(in oklab, var(--fg) 26%, var(--line));
     }
     .project-card:is(:hover, :focus-within) .project-stage::after {
       opacity: 1;
@@ -337,8 +345,7 @@
     filter: none !important;
     transform: none !important;
   }
-  .pill:active,
-  .project-card:is(:hover, :focus-within) {
+  .pill:active {
     transform: none !important;
   }
   .project-shot img {
