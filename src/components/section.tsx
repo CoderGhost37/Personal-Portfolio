@@ -13,21 +13,19 @@ export function Section({
 }) {
   const label = sections.find((s) => s.id === id)?.label;
   return (
-    <section
-      id={id}
-      aria-labelledby={`${id}-title`}
-      className='scroll-mt-12 pt-8 pb-10 sm:scroll-mt-10 sm:pt-10 sm:pb-14'
-    >
-      <Reveal className='mb-5 flex items-baseline justify-between gap-4'>
-        <h2
-          id={`${id}-title`}
-          className='font-serif text-[28px] leading-none tracking-[-0.01em] italic'
-        >
-          {label}
-        </h2>
-        {action}
-      </Reveal>
-      <Reveal delay={0.08}>{children}</Reveal>
+    <section id={id} aria-labelledby={`${id}-title`} className='scroll-mt-14'>
+      <div className='rule px-4 pt-2 pb-1.5'>
+        <Reveal className='flex items-baseline justify-between gap-4'>
+          <h2
+            id={`${id}-title`}
+            className='font-serif text-[30px] leading-[1.15] tracking-[-0.01em] italic'
+          >
+            {label}
+          </h2>
+          {action}
+        </Reveal>
+      </div>
+      {children}
     </section>
   );
 }

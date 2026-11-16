@@ -83,6 +83,102 @@
 }
 
 @layer components {
+  /* The page is a 720px column. Its side lines sit above the rows so
+     full-bleed bands and rules never paint over them. */
+  .frame {
+    position: relative;
+    width: min(720px, calc(100% - 16px));
+    margin-inline: auto;
+  }
+  .frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    border-inline: 1px solid var(--line);
+  }
+
+  .rule {
+    position: relative;
+  }
+  .rule::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100vw;
+    width: 200vw;
+    height: 1px;
+    background: var(--line);
+    pointer-events: none;
+  }
+
+  .hatch {
+    height: 24px;
+  }
+  .hatch::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    left: -100vw;
+    width: 200vw;
+    background: repeating-linear-gradient(
+      315deg,
+      var(--line) 0 1px,
+      transparent 0 50%
+    );
+    background-size: 10px 10px;
+  }
+
+  .dots {
+    height: 110px;
+    padding: 20px;
+    background: radial-gradient(
+        color-mix(in oklab, var(--dim) 55%, transparent) 1px,
+        transparent 0
+      )
+      center / 10px 10px content-box;
+  }
+  @media (min-width: 600px) {
+    .dots {
+      height: 150px;
+    }
+  }
+
+  /* 13px so the 1px bars have a true center pixel to sit on a line. */
+  .cross {
+    position: absolute;
+    z-index: 31;
+    width: 13px;
+    height: 13px;
+    pointer-events: none;
+  }
+  .cross::before,
+  .cross::after {
+    content: '';
+    position: absolute;
+    background: var(--dim);
+  }
+  .cross::before {
+    inset-inline: 0;
+    top: 6px;
+    height: 1px;
+  }
+  .cross::after {
+    inset-block: 0;
+    left: 6px;
+    width: 1px;
+  }
+
+  /* Covers the side margins as it sticks, and redraws the column lines
+     the overlay can't reach above z-40. */
+  .site-header {
+    background: var(--bg);
+    box-shadow: 0 0 0 100vmax var(--bg);
+    clip-path: inset(0 -100vmax);
+    border-inline: 1px solid var(--line);
+  }
+
   .pill {
     display: inline-flex;
     align-items: center;

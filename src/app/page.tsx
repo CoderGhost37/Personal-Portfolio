@@ -4,34 +4,46 @@ import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
 import { Projects } from '@/components/projects';
+import { Reveal } from '@/components/reveal';
 import { RichText } from '@/components/rich-text';
 import { Section } from '@/components/section';
 import { about } from '@/content';
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className='mx-auto max-w-[672px] px-4'>
-        <Hero />
-        <Section id='about'>
-          <div className='text-muted space-y-4'>
-            {about.paragraphs.map((paragraph) => (
-              <p key={paragraph}>
-                <RichText text={paragraph} />
-              </p>
-            ))}
-          </div>
-        </Section>
-        <Section id='experience'>
-          <ExperienceList />
-        </Section>
-        <Projects />
-        <Section id='connect'>
-          <ConnectCard />
-        </Section>
-      </main>
-      <Footer />
-    </>
+    <div className='overflow-x-clip'>
+      <div className='frame'>
+        <Header />
+        <main>
+          <Hero />
+          <div aria-hidden className='hatch rule' />
+          <Section id='about'>
+            <div className='rule p-4'>
+              <Reveal delay={0.08}>
+                <ul className='text-muted marker:text-dim list-disc space-y-3 pl-5'>
+                  {about.paragraphs.map((paragraph) => (
+                    <li key={paragraph} className='pl-1'>
+                      <RichText text={paragraph} />
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+          </Section>
+          <div aria-hidden className='hatch rule' />
+          <Section id='experience'>
+            <ExperienceList />
+          </Section>
+          <div aria-hidden className='hatch rule' />
+          <Projects />
+          <div aria-hidden className='hatch rule' />
+          <Section id='connect'>
+            <ConnectCard />
+          </Section>
+          <div aria-hidden className='hatch rule' />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 }
