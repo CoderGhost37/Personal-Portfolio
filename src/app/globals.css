@@ -107,13 +107,6 @@
   .pill:active {
     transform: scale(0.96);
   }
-  .pill-filled,
-  .pill-filled:hover {
-    background: var(--fg);
-    border-color: var(--fg);
-    color: var(--bg);
-  }
-
   .project-card {
     position: relative;
     padding: 6px;

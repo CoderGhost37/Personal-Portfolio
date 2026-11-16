@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
-import { FiClock, FiCode, FiDownload, FiMapPin } from 'react-icons/fi';
+import { FiClock, FiCode, FiMapPin } from 'react-icons/fi';
 import { experience, profile, socials } from '@/content';
 import { externalLinkProps } from '@/lib/links';
 import { EASE_OUT, rise } from '@/lib/motion';
@@ -179,12 +179,6 @@ export function Hero() {
             </li>
           );
         })}
-        <li>
-          <a href={profile.resume} download className='pill pill-filled'>
-            <FiDownload aria-hidden className='size-3.5' />
-            Resume
-          </a>
-        </li>
       </motion.ul>
     </motion.div>
   );

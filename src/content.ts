@@ -50,7 +50,6 @@ export const profile = {
   availability: 'Open to new roles',
   avatar: '/images/profile/developer-pic-2.jpg',
   email: 'kushagram2002@gmail.com',
-  resume: '/Kushagra_Mathur_Resume.pdf',
   bio: 'I like owning the whole system, from *data models and APIs* to *distributed services* and the *interface on top*. Lately most of what I ship has a model doing real work inside it.',
 };
 
