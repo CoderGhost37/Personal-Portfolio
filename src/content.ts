@@ -43,21 +43,22 @@ export const sections: { id: SectionId; label: string }[] = [
 // Text wrapped in *asterisks* renders as emphasized (full-contrast) words.
 export const profile = {
   name: 'Kushagra Mathur',
-  role: 'Full-stack developer',
-  location: 'India',
+  role: 'AI-native software engineer',
+  location: 'Bengaluru, India',
   timeZone: 'Asia/Kolkata',
   openToWork: true,
   availability: 'Open to new roles',
   avatar: '/images/profile/developer-pic-2.jpg',
   email: 'kushagram2002@gmail.com',
   resume: '/Kushagra_Mathur_Resume.pdf',
-  bio: 'I build web products end to end, from the *database schema and API* to the *interface people click on*. Lately most of them have a model somewhere in the loop.',
+  bio: 'I like owning the whole system, from *data models and APIs* to *distributed services* and the *interface on top*. Lately most of what I ship has a model doing real work inside it.',
 };
 
 export const about = {
   paragraphs: [
-    'I started with React side projects in college and never stopped shipping. These days I work across the stack with *Next.js, TypeScript, Postgres and Java*, and I like owning a feature from the first migration to the last hover state.',
-    'Recently I have been building AI products. *Vizora* turns a prompt into a ready-to-post YouTube thumbnail, and my *Lovable clone* turns a chat into a working app.',
+    'I have been shipping full-stack products since college, and the fundamentals still do most of the work. I think in *data models, service boundaries and failure modes*, and I enjoy making systems faster, like raising microservice throughput by 28% at TCS.',
+    'Nearly everything I build now has a model in the loop. That means agents that call tools and recover from errors, chat over your own documents, streaming conversations with memory and outputs structured enough to use in code. Knowing *how retrieval, embeddings and context limits actually behave* is what turns these from demos into features people rely on.',
+    'I build with AI too, and I stay the engineer while I do. I write the spec, run coding agents in parallel, then *read every diff and test it in the real app* before anything ships. Recently that produced *Vizora*, which turns a chat into a YouTube thumbnail, and a *Lovable clone* that turns a chat into a working app.',
   ],
 };
 
