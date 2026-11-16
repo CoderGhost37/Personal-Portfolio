@@ -46,8 +46,6 @@ export const profile = {
   role: 'Software Engineer',
   location: 'Bengaluru, India',
   timeZone: 'Asia/Kolkata',
-  openToWork: true,
-  availability: 'Open to new roles',
   avatar: '/images/profile/kushagra-avatar.jpg',
   email: 'kushagram2002@gmail.com',
   bio: 'I like owning the whole system, from *data models and APIs* to *distributed services* and the *interface on top*. Lately most of what I ship has a model doing real work inside it.',

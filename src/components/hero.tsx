@@ -14,7 +14,7 @@ import { SocialPills } from './social-pills';
 const current = experience.find((role) => role.end === 'present');
 
 // Load sequence, in seconds: avatar, then the name word by word, then the
-// rest at 60ms steps. The last item settles at about 1.09s.
+// rest at 60ms steps. The last item settles at about 1.03s.
 const NAME_START = 0.12;
 const WORD_STEP = 0.07;
 const REST_START = 0.28;
@@ -42,7 +42,6 @@ const meta: { key: string; icon: ReactNode; label: ReactNode }[] = [
 
 export function Hero() {
   const nameWords = profile.name.split(' ');
-  const statusStep = profile.openToWork ? 1 : 0;
 
   return (
     <motion.div initial='hidden' animate='show'>
@@ -99,28 +98,18 @@ export function Hero() {
           >
             {profile.role}
           </motion.p>
-          {profile.openToWork && (
-            <motion.p
-              variants={rise}
-              custom={step(1)}
-              className='rise text-muted mt-1 flex items-center gap-2 font-mono text-[12px] leading-none'
-            >
-              <span
-                aria-hidden
-                className='bg-signal size-[7px] shrink-0 rounded-full shadow-[0_0_0_3px_color-mix(in_oklab,var(--signal)_18%,transparent)]'
-              />
-              {profile.availability}
-            </motion.p>
-          )}
         </div>
       </div>
 
-      <ul className='text-muted font-mono text-[12px]'>
+      <ul className='text-muted font-mono text-[12px] sm:flex'>
         {meta.map(({ key, icon, label }, i) => (
-          <li key={key} className='rule px-4 py-2.5'>
+          <li
+            key={key}
+            className='rule border-line min-w-0 px-4 py-2.5 sm:not-first:border-l sm:not-last:shrink-0 sm:last:flex-1'
+          >
             <motion.span
               variants={rise}
-              custom={step(1 + statusStep + i)}
+              custom={step(1 + i)}
               className='rise flex min-w-0 items-center gap-2.5'
             >
               <span aria-hidden className='icon-tile size-5 rounded-md'>
@@ -135,14 +124,14 @@ export function Hero() {
       <div className='rule p-4'>
         <motion.p
           variants={rise}
-          custom={step(1 + statusStep + meta.length)}
+          custom={step(1 + meta.length)}
           className='rise text-muted'
         >
           <RichText text={profile.bio} />
         </motion.p>
         <motion.div
           variants={rise}
-          custom={step(2 + statusStep + meta.length)}
+          custom={step(2 + meta.length)}
           className='rise mt-4'
         >
           <SocialPills />
