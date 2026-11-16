@@ -14,13 +14,12 @@ function LogoTile({ name, logo }: { name: string; logo?: string }) {
   return (
     <span className='border-line bg-surface-2 text-muted grid size-9 shrink-0 place-items-center overflow-hidden rounded-[10px] border font-mono text-[12px] font-medium'>
       {logo ? (
-        // The vendored logos are drawn for dark backgrounds, so the tile stays dark in both themes.
         <Image
           src={logo}
           alt=''
           width={36}
           height={36}
-          className='size-full bg-[#141417] object-contain p-1.5'
+          className='size-full object-cover'
         />
       ) : (
         <span aria-hidden>{name[0]}</span>

@@ -120,6 +120,7 @@ export const experience: Role[] = [
     start: '2026-10',
     end: 'present',
     location: 'Bengaluru',
+    logo: '/logos/wisemonk-mark.png',
     points: [],
   },
   {
@@ -128,6 +129,7 @@ export const experience: Role[] = [
     start: '2025-02',
     end: '2026-09',
     location: 'Hyderabad',
+    logo: '/logos/tcs-mark.png',
     points: [
       'Built and maintained 30+ reusable frontend components for an e-commerce platform.',
       'Cut product page load time by 4% with rendering optimizations and lazy loading.',
@@ -140,7 +142,7 @@ export const experience: Role[] = [
     start: '2024-01',
     end: '2024-03',
     location: 'Hyderabad',
-    logo: '/logos/osmosys.png',
+    logo: '/logos/osmosys-mark.png',
     points: [
       'Built frontend interfaces that reduced average page load times by 6%.',
       'Connected frontend apps to backend services and REST APIs.',
@@ -153,7 +155,7 @@ export const experience: Role[] = [
     start: '2023-03',
     end: '2024-08',
     location: 'Remote',
-    logo: '/logos/thinkroman.png',
+    logo: '/logos/thinkroman-mark.png',
     points: [
       'Built the frontend for several of the company’s live websites.',
       'Built the company’s full-stack website on my own.',
@@ -164,7 +166,7 @@ export const experience: Role[] = [
 
 export const connect = {
   headline: 'Let’s build something.',
-  copy: 'Open to new roles and freelance work. Email is the quickest way to reach me.',
+  copy: 'Have an idea, a role or a question? Email is the quickest way to reach me.',
 };
 
 export const socials: Social[] = [

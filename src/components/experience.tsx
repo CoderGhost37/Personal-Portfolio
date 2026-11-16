@@ -41,7 +41,10 @@ export function ExperienceList() {
               key={role.company}
               className='border-line flex items-start gap-3 border-t py-3.5 first:border-t-0'
             >
-              <RowContent row={row} />
+              <RowContent
+                row={row}
+                trailing={<span aria-hidden className='mt-1 size-4 shrink-0' />}
+              />
             </li>
           );
         }
